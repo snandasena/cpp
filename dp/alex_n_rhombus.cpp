@@ -1,13 +1,16 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-using ld = long double;
-using ll = unsigned long long;
+typedef long long ll;
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
+    int n;
+    cin >> n;
+
+    cout << n * (n - 1) * 2 + 1;
 
     return 0;
 }

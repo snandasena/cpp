@@ -1,13 +1,13 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-typedef long long ll;
+using ld = long double;
+using ll = long long;
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
-
     int t;
     cin >> t;
     while (t--) {
@@ -15,51 +15,24 @@ int main() {
         cin >> n >> k;
         string s;
         cin >> s;
-        int ans = 0;
-        int zc = 0;
-        int oc = 0;
-        for (char i : s) {
-            if (i == '0') {
-                zc++;
-            } else {
-                oc++;
-            }
+        int res = 0;
+        for (int i = 0; i < n;) {
+            int j = i + 1;
+            for (; j < n & s[j] != '1'; j++);
+
+            int left = s[i] == '1' ? k : 0;
+            int right = j < n && s[j] == '1' ? k : 0;
+
+            int len = j - i;
+            if (left == k) len--;
+
+            len -= left + right;
+            if (len > 0) res += (len + k) / (k + 1);
+
+            i = j;
         }
 
-        if (zc == n) {
-            if (zc == k) {
-                ans = 1;
-            } else {
-                if (n % k != 0) {
-                    ans = n / k;
-                } else {
-                    ans = (n / k) - 1;
-                }
-            }
-
-        } else {
-            int c = 0;
-            char pre = 'x';
-            for (int i = 0; i < n; i++) {
-                if (s[i] == '0') {
-                    if (pre == 'x') {
-                        pre = '0';
-                        c++;
-                    } else if (c < k) {
-                        pre = '0';
-                        c++;
-                    } else if (c == k) {
-                        pre = '0';
-                        ans++;
-                        c = 0;
-                    }
-                } else {
-                    pre = 'x';
-                    c = 0;
-                }
-            }
-        }
-        cout << ans << "\n";
+        cout << res << "\n";
     }
 
     return 0;

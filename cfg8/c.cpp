@@ -2,12 +2,14 @@
 
 using namespace std;
 using ld = long double;
-using ll = unsigned long long;
+using ll = long long;
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
+
+
 
     return 0;
 }
