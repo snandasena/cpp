@@ -21,18 +21,14 @@ int main() {
             s.push_back(c);
         }
 
-        for (int i = 0; i < s.size() - 1;) {
+        for (int i = 0; i < s.size() - 1; i++) {
             for (int j = 0; j < s.size() - 1; j++) {
                 if (s[j] == '1' && s[j + 1] == '0') {
                     s[j] = 'x';
-                    break;
                 }
             }
-
-            break;
         }
 
-        cout << t << end;
         for (char c : s) {
             if (c != 'x') {
                 cout << c;
