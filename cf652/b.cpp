@@ -3,40 +3,41 @@
 using namespace std;
 using ld = long double;
 using ll = unsigned long long;
-#define end "\n"
 
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
-    int t, n;
-    char c;
+
+    int t, x;
     cin >> t;
+    vector<int> v;
     while (t--) {
-        vector<char> s;
-        cin >> n;
-        while (n--) {
-            cin >> c;
-            s.push_back(c);
-        }
-
-        for (int i = 0; i < s.size() - 1; i++) {
-            for (int j = 0; j < s.size() - 1; j++) {
-                if (s[j] == '1' && s[j + 1] == '0') {
-                    s[j] = 'x';
-                }
-            }
-        }
-
-        for (char c : s) {
-            if (c != 'x') {
-                cout << c;
-            }
-        }
-
-        cout << end;
+        cin >> x;
+        v.push_back(x);
     }
+
+    int curr = 0;
+    int mx = 0;
+    int pre = 0;
+    int pc = 0;
+    for (int i = 0; i < v.size(); i++) {
+        if (i == 0) {
+            curr = 1;
+            pre = v[i];
+        } else if (pre == v[i]) {
+            curr++;
+        } else {
+            mx = max(mx, min(pc, curr) * 2);
+            pc = curr;
+            curr = 1;
+            pre = v[i];
+        }
+    }
+
+    mx = max(mx, min(pc, curr) * 2);
+    cout << mx << "\n";
 
     return 0;
 }
