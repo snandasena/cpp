@@ -9,14 +9,8 @@ int main() {
     cin.tie(nullptr);
     cout.tie(nullptr);
 
-    ll n;
-    cin >> n;
-
-    if (n % 2 == 0) {
-        cout << "Mahmoud";
-    } else {
-        cout << "Ehab";
-    }
-
+    int x, y, z;
+    cin >> x >> y >> z;
+    cout << max(max(abs(x - y), abs(x - z)), abs(z - y));
     return 0;
 }

@@ -9,13 +9,15 @@ int main() {
     cin.tie(nullptr);
     cout.tie(nullptr);
 
-    ll n;
-    cin >> n;
-
-    if (n % 2 == 0) {
-        cout << "Mahmoud";
-    } else {
-        cout << "Ehab";
+    int n, k;
+    cin >> n >> k;
+    int sum;
+    for (int i = 1; i <= 9; i++) {
+        sum = n * i;
+        if ((sum - k) % 10 == 0 || sum % 10 == 0) {
+            cout << i;
+            break;
+        }
     }
 
     return 0;

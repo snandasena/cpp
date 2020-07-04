@@ -9,14 +9,18 @@ int main() {
     cin.tie(nullptr);
     cout.tie(nullptr);
 
-    ll n;
+    int n;
     cin >> n;
-
-    if (n % 2 == 0) {
-        cout << "Mahmoud";
-    } else {
-        cout << "Ehab";
+    vector<int> v(n);
+    int mx = 0;
+    for (int &i : v) {
+        cin >> i;
+        mx = max(i, mx);
     }
-
+    int ans = 0;
+    for (int i : v) {
+        ans += mx - i;
+    }
+    cout << ans;
     return 0;
 }

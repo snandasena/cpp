@@ -8,15 +8,13 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
+    int t;
+    ll a, b, c, d;
+    cin >> t;
+    while (t--) {
+        cin >> a >> b >> c >> d;
+        cout << b << " " << c << " " << c << "\n";
 
-    ll n;
-    cin >> n;
-
-    if (n % 2 == 0) {
-        cout << "Mahmoud";
-    } else {
-        cout << "Ehab";
     }
-
     return 0;
 }
