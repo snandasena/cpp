@@ -18,4 +18,11 @@ set(CMAKE_CXX_STANDARD 17)
 #add_executable(cp_algorithms codeforces/wrong_substractuion.cpp)
 #add_executable(cp_algorithms codeforces/elephant.cpp)
 #add_executable(cp_algorithms codeforces/temp.cpp)
-add_executable(cp_algorithms codeforces/temp.cpp)
+#add_executable(cp_algorithms codeforces/temp.cpp)
+#add_executable(cp_algorithms codeforces/rotaration_matching.cpp)
+#add_executable(cp_algorithms codeforces/touble_sort.cpp)
+add_executable(cp_algorithms codeforces/matrix_game.cpp)
+
+
+#add_executable(graphs graphs/arodj.cpp)
+#add_executable(graphs graphs/dfs.cpp)
