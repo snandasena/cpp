@@ -5,13 +5,13 @@ const int N = 5;
 vector<pair<int, int>> adj[N];
 vector<bool> visited(N, false);
 vector<int> dist(N, INFINITY);
-queue<pair<int, int >> q;
+priority_queue<pair<int, int >> q;
 
 void dijkstra(int x) {
     dist[x] = 0;
     q.emplace(0, x);
     while (!q.empty()) {
-        int a = q.back().second;
+        int a = q.top().second;
         q.pop();
         if (visited[a]) continue;
         visited[a] = true;
